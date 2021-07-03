@@ -19,17 +19,17 @@
         <div class="d-flex mx-auto justify-content-center">
           <div class="d-flex flex-column align-items-center p-3">
             <h2>Income</h2>
-            <h1>{{totalInc}}</h1>
+            <h1>${{totalInc}}</h1>
           </div>
           <div class="d-flex flex-column align-items-center p-3">
             <h2>Balance</h2>
-            <h1>{{totalBal}}</h1>
-            <p>{{balancePercentage}}%</p>
+            <h1>${{totalBal}}</h1>
+            <p class="fw-bold">{{balancePercentage}}%</p>
           </div>
           <div class="d-flex flex-column align-items-center p-3">
             <h2>Expense</h2>
-            <h1>{{totalExp}}</h1>
-            <p>{{expensePercentage}}%</p>
+            <h1>${{totalExp}}</h1>
+            <p class="fw-bold">{{expensePercentage}}%</p>
           </div>
         </div>
         <ul v-if="showChart" class="chart   mx-auto">
@@ -73,7 +73,7 @@
               <tr v-for="(income, index) in incomeList">
                 <th scope="row">{{Number(index) + 1}}</th>
                 <td>{{income.subject}}</td>
-                <td>{{Number(income.amount)}}</td>
+                <td>${{Number(income.amount)}}</td>
                 <td @click="removeInc(index)"><button class="btn btn-danger btn-sm">Delete</button></td>
               </tr>
             </tbody>
@@ -95,7 +95,7 @@
               <tr v-for="(expense, index) in expenseList">
                 <th scope="row">{{Number(index) + 1}}</th>
                 <td>{{expense.subject}}</td>
-                <td>{{Number(expense.amount)}}</td>
+                <td>${{Number(expense.amount)}}</td>
                 <td @click="removeExp(index)"><button class="btn btn-danger btn-sm">Delete</button></td>
               </tr>
             </tbody>
